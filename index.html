@@ -3,36 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Who is Indian - 1 Page Note</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <title>Who is Indian - Intersectionality & Patriarchy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
     
     <style>
-        /* Base Theme (Dark & Cinematic) */
+        /* Base Theme (Dark & Cinematic + Parchment Glow) */
         body {
             background-color: #050505;
             color: #e0e0e0;
             font-family: 'Inter', sans-serif;
             margin: 0;
-            padding: 50px 20px;
-            background-image: radial-gradient(circle at top right, #1a0b2e, #050505),
-                              radial-gradient(circle at bottom left, #0d1b2a, #050505);
+            padding: 0;
+            background-image: radial-gradient(circle at top right, rgba(26, 11, 46, 0.8), transparent 40%),
+                              radial-gradient(circle at bottom left, rgba(13, 27, 42, 0.8), transparent 40%),
+                              linear-gradient(rgba(5,5,5,0.9), rgba(5,5,5,0.9));
+            overflow-x: hidden;
         }
 
-        /* 1. The Code-Block Style Container */
+        /* Hero Section Container */
+        .hero-section {
+            padding: 80px 20px 40px 20px;
+            text-align: center;
+        }
+
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            text-shadow: 0 0 20px rgba(179, 136, 255, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #b388ff;
+            font-style: italic;
+            margin-bottom: 50px;
+        }
+
+        /* =========================================================
+           SECTION 1: 1-PAGE NOTE (GEMINI CODE-BLOCK STYLE)
+           ========================================================= */
         .note-container {
             max-width: 800px;
             margin: 0 auto;
             background: rgba(20, 20, 20, 0.6);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 12px;
-            overflow: hidden; /* Keeps the rounded corners crisp */
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 
-                        0 0 15px rgba(138, 43, 226, 0.1);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(138, 43, 226, 0.1);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
         }
-
-        /* 2. The Header Bar (Like Gemini UI) */
         .note-header {
             background: rgba(255, 255, 255, 0.05);
             padding: 10px 20px;
@@ -45,8 +68,6 @@
             font-weight: 600;
             letter-spacing: 0.5px;
         }
-
-        /* Mini Print Button */
         .print-btn-mini {
             background: transparent;
             border: none;
@@ -58,80 +79,179 @@
             align-items: center;
             gap: 6px;
         }
-        .print-btn-mini:hover {
-            color: #ffffff;
-            transform: scale(1.1);
-        }
-        .print-btn-mini span {
-            font-size: 0.75rem;
-            font-family: 'Inter', sans-serif;
-            text-transform: uppercase;
-        }
-
-        /* 3. The Scrollable Body */
+        .print-btn-mini:hover { color: #ffffff; transform: scale(1.05); }
+        .print-btn-mini span { font-size: 0.75rem; font-family: 'Inter', sans-serif; text-transform: uppercase; }
+        
         .note-body {
-            max-height: 350px; /* Adjust this to make it taller/shorter */
+            max-height: 350px;
             overflow-y: auto;
             padding: 30px 40px;
+            text-align: left;
         }
-
-        /* Custom Sleek Scrollbar */
-        .note-body::-webkit-scrollbar {
-            width: 8px;
-        }
-        .note-body::-webkit-scrollbar-track {
-            background: rgba(0, 0, 0, 0.2);
-        }
-        .note-body::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 4px;
-        }
-        .note-body::-webkit-scrollbar-thumb:hover {
-            background: rgba(255, 255, 255, 0.4);
-        }
-
-        /* Typography (Scaled Down) */
-        h1 { 
-            font-family: 'Playfair Display', serif; 
-            color: #ffffff; 
-            font-size: 1.5rem; /* Smaller */
-            margin-top: 0;
-            margin-bottom: 25px;
-            letter-spacing: 0.5px;
-        }
-        h2 { 
-            font-family: 'Playfair Display', serif; 
-            color: #b388ff; 
-            font-size: 1.1rem; /* Smaller */
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
-            padding-bottom: 8px; 
-            margin-top: 25px;
-            margin-bottom: 15px;
-        }
-        p, li { 
-            line-height: 1.6; 
-            color: #cccccc; 
-            font-size: 0.9rem; /* Smaller text */
-            margin-bottom: 12px;
-        }
-        ul { padding-left: 20px; margin-top: 5px; }
-        li { margin-bottom: 8px; }
+        .note-body::-webkit-scrollbar { width: 8px; }
+        .note-body::-webkit-scrollbar-track { background: rgba(0, 0, 0, 0.2); }
+        .note-body::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.2); border-radius: 4px; }
+        
+        .note-body h1 { font-family: 'Playfair Display', serif; color: #ffffff; font-size: 1.5rem; margin-top: 0; margin-bottom: 25px; }
+        .note-body h2 { font-family: 'Playfair Display', serif; color: #b388ff; font-size: 1.1rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 8px; margin-top: 25px; margin-bottom: 15px; }
+        .note-body p, .note-body li { line-height: 1.6; color: #cccccc; font-size: 0.9rem; margin-bottom: 12px; }
 
         /* =========================================================
-           THE MAGIC PRINT HACK 🖨️ 
+           SECTION 2: THE INCIDENT (STORYBOARD)
+           ========================================================= */
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin: 100px 0 50px 0;
+            border-bottom: 1px solid rgba(138, 43, 226, 0.3);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        .section-wrapper { text-align: center; padding: 0 20px; }
+        
+        .story-card {
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 4px solid #b388ff;
+            padding: 30px;
+            border-radius: 0 12px 12px 0;
+            text-align: left;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+        }
+        .story-card.intersection { border-left-color: #2962ff; }
+        
+        .story-concept {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #b388ff;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .story-card.intersection .story-concept { color: #2962ff; }
+        .story-card h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 0 0 15px 0; color: #fff; }
+
+        /* =========================================================
+           SECTION 3: TIMELINE (GENDER IN INDIA)
+           ========================================================= */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background: linear-gradient(to bottom, #6200ea, #2962ff);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            right: -8px;
+            background-color: #050505;
+            border: 4px solid #b388ff;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+            box-shadow: 0 0 10px #b388ff;
+        }
+        .left { left: 0; text-align: right; }
+        .right { left: 50%; text-align: left; }
+        .right::after { left: -8px; border-color: #2962ff; box-shadow: 0 0 10px #2962ff;}
+        
+        .time-content {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .time-content h4 { margin: 0 0 10px 0; color: #fff; font-size: 1.2rem; }
+        .time-content span { color: #888; font-size: 0.85rem; font-weight: bold; }
+
+        /* =========================================================
+           SECTION 4: SOURCES (GLASS DISCS)
+           ========================================================= */
+        .sources-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto 100px auto;
+        }
+        .glass-disc {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, rgba(0,0,0,0.4) 100%);
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(15px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 30px;
+            box-sizing: border-box;
+            box-shadow: inset 0 0 30px rgba(138, 43, 226, 0.1), 0 10px 30px rgba(0,0,0,0.5);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .glass-disc:hover {
+            transform: translateY(-10px);
+            box-shadow: inset 0 0 40px rgba(41, 98, 255, 0.2), 0 15px 40px rgba(0,0,0,0.6);
+            border-color: rgba(138, 43, 226, 0.4);
+        }
+        .glass-disc h4 { font-family: 'Playfair Display', serif; color: #fff; margin: 0 0 10px 0; font-size: 1.3rem; }
+        .glass-disc p { font-size: 0.8rem; color: #aaa; margin: 0; line-height: 1.5; }
+
+        /* =========================================================
+           SCROLL ANIMATIONS (JS Triggered)
+           ========================================================= */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* =========================================================
+           THE MAGIC PRINT HACK 🖨️
            ========================================================= */
         @media print {
             body { background: white; padding: 0; color: black; }
+            /* Hide EVERYTHING except the note container */
+            .hero-section > *:not(.note-container),
+            .section-wrapper, .timeline, .sources-grid, .section-title {
+                display: none !important;
+            }
             .note-container { 
                 border: none; box-shadow: none; max-width: 100%; margin: 0; 
                 background: transparent; backdrop-filter: none; -webkit-backdrop-filter: none;
             }
-            .note-header { display: none !important; } /* Hides the top bar */
-            .note-body { 
-                max-height: none; /* Opens up completely for printing */
-                overflow: visible; 
-                padding: 0; 
-            }
+            .note-header { display: none !important; }
+            .note-body { max-height: none; overflow: visible; padding: 0; }
             h1 { color: black; font-size: 20pt; margin-bottom: 20px; text-align: center; }
             h2 { color: black; border-bottom: 2px solid black; font-size: 14pt; margin-top: 20px; }
             p, li { color: black; font-size: 11pt; line-height: 1.5; }
@@ -140,36 +260,127 @@
 </head>
 <body>
 
-    <div class="note-container">
-        
-        <div class="note-header">
-            1-PAGE NOTE SUMMARY
-            <button class="print-btn-mini" onclick="window.print()" title="Print / Download PDF">
-                🖨️ <span>Print</span>
-            </button>
+    <div class="hero-section">
+        <h1 class="main-title">Who is Indian?</h1>
+        <p class="subtitle">Exploring the layers of Patriarchy & Intersectionality</p>
+
+        <div class="note-container">
+            <div class="note-header">
+                1-PAGE NOTE SUMMARY
+                <button class="print-btn-mini" onclick="window.print()" title="Print / Download PDF">
+                    🖨️ <span>Print</span>
+                </button>
+            </div>
+            <div class="note-body">
+                <h1>Layers of Silence: A Digital Story on Patriarchy and Intersectionality</h1>
+                <h2>1. Concepts Addressed & The Narrative</h2>
+                <p>This project explores patriarchy (a social system of male dominance) and intersectionality (how inequalities like gender, caste, and class overlap to produce complex discrimination). To illustrate these abstract sociological ideas, the project draws on the powerful real-life case of Bhanwari Devi, a rural social worker from Rajasthan who faced violent retaliation for stopping a child marriage. Her experience highlights how discrimination against women is exponentially worsened when it intersects with rigid caste hierarchies and economic vulnerability.</p>
+                <h2>2. Creative Approach & Format</h2>
+                <p>Moving beyond a conventional essay, this project takes the form of an interactive digital storyboard. The website allows viewers to explore the narrative by scrolling through visually distinct sections. Short narrative moments from Bhanwari Devi's case are paired with explanatory notes connecting the events to broader theoretical concepts. Utilizing minimal graphics, clear typography, and a dynamic timeline layout, the format translates structural inequalities into an accessible, relatable, and engaging human experience for peers.</p>
+                <h2>3. Sources and References</h2>
+                <ul>
+                    <li><strong>Crenshaw, K. (1989).</strong> Demarginalizing the Intersection of Race and Sex. <em>University of Chicago Legal Forum.</em></li>
+                    <li><strong>Chakravarti, U. (1993).</strong> Conceptualising Brahmanical Patriarchy in Early India. <em>Economic and Political Weekly.</em></li>
+                    <li><strong>Supreme Court of India. (1997).</strong> Vishaka and Others v. State of Rajasthan.</li>
+                </ul>
+                <h2>4. Acknowledgements</h2>
+                <p>This project was developed using ideas from the course unit on gender studies and discussions about gender justice movements in India.</p>
+            </div>
         </div>
-
-        <div class="note-body">
-            <h1>Layers of Silence: A Digital Story on Patriarchy and Intersectionality</h1>
-
-            <h2>1. Concepts Addressed & The Narrative</h2>
-            <p>This project explores patriarchy (a social system of male dominance) and intersectionality (how inequalities like gender, caste, and class overlap to produce complex discrimination). To illustrate these abstract sociological ideas, the project draws on the powerful real-life case of Bhanwari Devi, a rural social worker from Rajasthan who faced violent retaliation for stopping a child marriage. Her experience highlights how discrimination against women is exponentially worsened when it intersects with rigid caste hierarchies and economic vulnerability.</p>
-
-            <h2>2. Creative Approach & Format</h2>
-            <p>Moving beyond a conventional essay, this project takes the form of an interactive digital storyboard. The website allows viewers to explore the narrative by scrolling through visually distinct sections. Short narrative moments from Bhanwari Devi's case are paired with explanatory notes connecting the events to broader theoretical concepts. Utilizing minimal graphics, clear typography, and a dynamic timeline layout, the format translates structural inequalities into an accessible, relatable, and engaging human experience for peers.</p>
-
-            <h2>3. Sources and References</h2>
-            <ul>
-                <li><strong>Crenshaw, K. (1989).</strong> Demarginalizing the Intersection of Race and Sex. <em>University of Chicago Legal Forum.</em></li>
-                <li><strong>Chakravarti, U. (1993).</strong> Conceptualising Brahmanical Patriarchy in Early India. <em>Economic and Political Weekly.</em></li>
-                <li><strong>Supreme Court of India. (1997).</strong> Vishaka and Others v. State of Rajasthan.</li>
-            </ul>
-
-            <h2>4. Acknowledgements</h2>
-            <p>This project was developed using ideas from the course unit on gender studies and discussions about gender justice movements in India.</p>
-        </div>
-
     </div>
+
+    <div class="section-wrapper">
+        <h2 class="section-title reveal">An Indian Incident</h2>
+        
+        <div class="story-card reveal">
+            <span class="story-concept">The Catalyst</span>
+            <h3>Rajasthan, 1992</h3>
+            <p>Bhanwari Devi, a grassroots social worker (Sathin) employed by the state government, campaigns against the prevalent practice of child marriage in her village of Bhateri. She successfully prevents the marriage of a one-year-old girl.</p>
+        </div>
+
+        <div class="story-card reveal">
+            <span class="story-concept">Concept: Patriarchy</span>
+            <h3>The Violent Backlash</h3>
+            <p>Her intervention angers the dominant patriarchal structure of the village. For challenging the traditional authority of men and daring to assert her agency, she faces severe social boycott and ultimately, a brutal gang rape orchestrated by dominant-caste men to "teach her a lesson."</p>
+        </div>
+
+        <div class="story-card intersection reveal">
+            <span class="story-concept">Concept: Intersectionality</span>
+            <h3>The Systemic Silence</h3>
+            <p>Bhanwari Devi's struggle for justice reveals a deeper, overlapping prejudice. The police delay her report, and the courts initially acquit the men, citing that upper-caste men would not rape a lower-caste woman for "purity" reasons. Her gender, lower-caste identity, and rural class status intersected to deny her fundamental justice.</p>
+        </div>
+    </div>
+
+    <div class="section-wrapper">
+        <h2 class="section-title reveal">Timeline: Gender in India</h2>
+        
+        <div class="timeline reveal">
+            <div class="timeline-item left reveal">
+                <div class="time-content">
+                    <span>1829</span>
+                    <h4>Abolition of Sati</h4>
+                    <p>An early legislative milestone against violent patriarchal practices, though initiated under colonial rule.</p>
+                </div>
+            </div>
+            <div class="timeline-item right reveal">
+                <div class="time-content">
+                    <span>1950</span>
+                    <h4>The Constitution</h4>
+                    <p>Adoption of the Indian Constitution, guaranteeing equality before the law and prohibiting discrimination on grounds of religion, race, caste, sex, or place of birth.</p>
+                </div>
+            </div>
+            <div class="timeline-item left reveal">
+                <div class="time-content">
+                    <span>1992</span>
+                    <h4>73rd Amendment & Bhanwari Devi</h4>
+                    <p>While grassroots democracy reserved seats for women in local panchayats, the Bhanwari Devi case exposed the brutal ground-level resistance to women's empowerment.</p>
+                </div>
+            </div>
+            <div class="timeline-item right reveal">
+                <div class="time-content">
+                    <span>1997</span>
+                    <h4>Vishaka Guidelines</h4>
+                    <p>Sparked directly by Bhanwari Devi's fight, the Supreme Court lays down historic guidelines to prevent sexual harassment at the workplace.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-wrapper">
+        <h2 class="section-title reveal">Academic Anchors</h2>
+        
+        <div class="sources-grid">
+            <div class="glass-disc reveal">
+                <h4>Kimberlé Crenshaw</h4>
+                <p>Coined the term <i>Intersectionality</i> (1989), providing the framework to understand how caste, class, and gender overlap in cases like Bhanwari Devi's.</p>
+            </div>
+            <div class="glass-disc reveal">
+                <h4>Uma Chakravarti</h4>
+                <p>Authored <i>Conceptualising Brahmanical Patriarchy</i> (1993), essential for understanding how caste purity dictates the control of women in India.</p>
+            </div>
+            <div class="glass-disc reveal">
+                <h4>Anupama Rao</h4>
+                <p>Explores the violent intersections of caste, gender, and the state, contextualizing the vulnerability of Dalit and marginalized women.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function revealOnScroll() {
+            var reveals = document.querySelectorAll('.reveal');
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100; // Trigger point
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
+        // Trigger once on load, then listen to scroll
+        window.addEventListener('load', revealOnScroll);
+        window.addEventListener('scroll', revealOnScroll);
+    </script>
 
 </body>
 </html>
