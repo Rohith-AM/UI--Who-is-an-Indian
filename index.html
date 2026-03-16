@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who is Indian - 1 Page Note</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base Theme (Dark & Cinematic) */
+        body {
+            background-color: #050505;
+            color: #e0e0e0;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 50px 20px;
+            /* Subtly hinting at the parchment/dark spectrum vibe */
+            background-image: radial-gradient(circle at top right, #1a0b2e, #050505),
+                              radial-gradient(circle at bottom left, #0d1b2a, #050505);
+        }
+
+        /* Glassmorphism Panel (The Frosted Glass Effect) */
+        .glass-note {
+            max-width: 850px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 16px;
+            padding: 50px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), 
+                        inset 0 0 20px rgba(138, 43, 226, 0.05); /* Soft purple inner glow */
+        }
+
+        /* Typography */
+        h1 { 
+            font-family: 'Playfair Display', serif; 
+            color: #ffffff; 
+            text-align: center; 
+            margin-bottom: 40px;
+            letter-spacing: 1px;
+        }
+        h2 { 
+            font-family: 'Playfair Display', serif; 
+            color: #b388ff; /* Spectrum Purple */
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+            padding-bottom: 10px; 
+            margin-top: 35px;
+        }
+        p, li { 
+            line-height: 1.8; 
+            color: #cccccc; 
+            font-size: 1.05rem;
+        }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 10px; }
+
+        /* The Print Button */
+        .print-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 40px auto;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, #6200ea, #2962ff);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(98, 0, 234, 0.4);
+            transition: all 0.3s ease;
+        }
+        .print-btn:hover { 
+            transform: translateY(-2px); 
+            box-shadow: 0 6px 20px rgba(98, 0, 234, 0.6);
+        }
+
+        /* =========================================================
+           THE MAGIC PRINT HACK 🖨️ 
+           (Strips all dark mode UI and makes it pure academic paper)
+           ========================================================= */
+        @media print {
+            body { 
+                background: white; 
+                padding: 0; 
+                color: black; 
+            }
+            .glass-note { 
+                background: transparent; 
+                border: none; 
+                backdrop-filter: none; 
+                -webkit-backdrop-filter: none;
+                box-shadow: none; 
+                padding: 0; 
+            }
+            h1 { color: black; font-size: 24pt; margin-bottom: 20px; }
+            h2 { color: black; border-bottom: 2px solid black; font-size: 16pt; margin-top: 20px; }
+            p, li { color: black; font-size: 12pt; line-height: 1.5; }
+            .print-btn { display: none !important; } /* Hides button from PDF */
+        }
+    </style>
+</head>
+<body>
+
+    <button class="print-btn" onclick="window.print()">
+        🖨️ PRINT NOTE / DOWNLOAD PDF
+    </button>
+
+    <div class="glass-note">
+        <h1>Layers of Silence: A Digital Story on Patriarchy and Intersectionality</h1>
+
+        <h2>1. Concepts Addressed & The Narrative</h2>
+        <p>This project explores patriarchy (a social system of male dominance) and intersectionality (how inequalities like gender, caste, and class overlap to produce complex discrimination). To illustrate these abstract sociological ideas, the project draws on the powerful real-life case of Bhanwari Devi, a rural social worker from Rajasthan who faced violent retaliation for stopping a child marriage. Her experience highlights how discrimination against women is exponentially worsened when it intersects with rigid caste hierarchies and economic vulnerability.</p>
+
+        <h2>2. Creative Approach & Format</h2>
+        <p>Moving beyond a conventional essay, this project takes the form of an interactive digital storyboard. The website allows viewers to explore the narrative by scrolling through visually distinct sections. Short narrative moments from Bhanwari Devi's case are paired with explanatory notes connecting the events to broader theoretical concepts. Utilizing minimal graphics, clear typography, and a dynamic timeline layout, the format translates structural inequalities into an accessible, relatable, and engaging human experience for peers.</p>
+
+        <h2>3. Sources and References</h2>
+        <ul>
+            <li><strong>Crenshaw, K. (1989).</strong> Demarginalizing the Intersection of Race and Sex. <em>University of Chicago Legal Forum.</em></li>
+            <li><strong>Chakravarti, U. (1993).</strong> Conceptualising Brahmanical Patriarchy in Early India. <em>Economic and Political Weekly.</em></li>
+            <li><strong>Supreme Court of India. (1997).</strong> Vishaka and Others v. State of Rajasthan.</li>
+        </ul>
+
+        <h2>4. Acknowledgements</h2>
+        <p>This project was developed using ideas from the course unit on gender studies and discussions about gender justice movements in India.</p>
+    </div>
+
+</body>
+</html>
