@@ -8,17 +8,26 @@
     
     <style>
         /* Base Theme (Dark & Cinematic + Parchment Glow) */
+/* Base Theme (Dark Cinematic + Scroll Paper Background) */
         body {
             background-color: #050505;
             color: #e0e0e0;
             font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
-            background-image: radial-gradient(circle at top right, rgba(26, 11, 46, 0.8), transparent 40%),
-                              radial-gradient(circle at bottom left, rgba(13, 27, 42, 0.8), transparent 40%),
-                              linear-gradient(rgba(5,5,5,0.9), rgba(5,5,5,0.9));
+            
+            /* The Magic Scroll Background with Dark Overlay */
+            background-image: 
+                linear-gradient(rgba(5, 5, 5, 0.85), rgba(8, 5, 15, 0.95)), /* Dark overlay */
+                url('scroll-pen.jpg'); /* Your Scroll & Pen Image */
+            
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Makes the background stay still while scrolling */
+            background-blend-mode: multiply; /* Blends the paper texture with the dark theme */
+            
             overflow-x: hidden;
-        }
+        }}
 
         /* Hero Section Container */
         .hero-section {
@@ -295,6 +304,12 @@
         <h2 class="section-title reveal">An Indian Incident</h2>
         
         <div class="story-card reveal">
+            <span class="story-concept">The System She Lived In</span>
+            <h3>Rural Rajasthan, early 1990s</h3>
+            <p>Before the incident itself, Bhanwari Devi lived within a rigid social hierarchy shaped by caste, gender norms, and economic inequality. Women, particularly from lower castes, were expected to remain silent and accept traditional practices such as child marriage. Her role as a Sathin—a grassroots worker in the state’s Women’s Development Programme—placed her in the difficult position of challenging these norms from within the same community.</p>
+        </div>
+        
+        <div class="story-card intersection reveal">
             <span class="story-concept">The Catalyst</span>
             <h3>Rajasthan, 1992</h3>
             <p>Bhanwari Devi, a grassroots social worker (Sathin) employed by the state government, campaigns against the prevalent practice of child marriage in her village of Bhateri. She successfully prevents the marriage of a one-year-old girl.</p>
@@ -302,14 +317,32 @@
 
         <div class="story-card reveal">
             <span class="story-concept">Concept: Patriarchy</span>
+            <h3>The Breaking Tradition</h3>
+            <p>By stopping the child marriage, Bhanwari Devi did more than enforce a government rule. She challenged a deeply embedded social belief that families—and especially male elders—had unquestioned authority over girls’ lives. Her action exposed the tension between progressive state policies and the traditional patriarchal order that governed village life.</p>
+        </div>
+
+        <div class="story-card intersection reveal">
+            <span class="story-concept">Concept: Patriarchy</span>
             <h3>The Violent Backlash</h3>
             <p>Her intervention angers the dominant patriarchal structure of the village. For challenging the traditional authority of men and daring to assert her agency, she faces severe social boycott and ultimately, a brutal gang rape orchestrated by dominant-caste men to "teach her a lesson."</p>
         </div>
 
-        <div class="story-card intersection reveal">
+        <div class="story-card reveal">
             <span class="story-concept">Concept: Intersectionality</span>
             <h3>The Systemic Silence</h3>
             <p>Bhanwari Devi's struggle for justice reveals a deeper, overlapping prejudice. The police delay her report, and the courts initially acquit the men, citing that upper-caste men would not rape a lower-caste woman for "purity" reasons. Her gender, lower-caste identity, and rural class status intersected to deny her fundamental justice.</p>
+        </div>
+
+        <div class="story-card intersection reveal">
+            <span class="story-concept">Structural Change</span>
+            <h3>From Tragedy to Legal Reform</h3>
+            <p>The failure of local institutions to deliver justice sparked widespread outrage among women’s rights organizations across India. Public interest litigation was filed, and the case eventually influenced the landmark Supreme Court judgment in Vishaka and Others v. State of Rajasthan (1997). The Court established the Vishaka Guidelines, the first comprehensive framework in India to address sexual harassment in workplaces.</p>
+        </div>
+
+        <div class="story-card reveal">
+            <span class="story-concept">Intersectionality in Practice</span>
+            <h3>A question that Remains</h3>
+            <p>Although legal reforms followed, Bhanwari Devi’s experience continues to highlight how gender discrimination often overlaps with caste and class inequality. Her story remains a powerful example of how systemic injustice operates and why intersectional analysis is necessary to understand social inequality in India.</p>
         </div>
     </div>
 
@@ -347,6 +380,22 @@
                     <h4>Vishaka Guidelines</h4>
                     <p>Sparked directly by Bhanwari Devi's fight, the Supreme Court lays down historic guidelines to prevent sexual harassment at the workplace.</p>
                     <img src="vishaka.png" alt="Vishakha Guidelines" class="cinematic-img">
+                </div>
+            </div>
+            <div class="timeline-item left reveal">
+                <div class="time-content">
+                    <span>2013</span>
+                    <h4>From Guidelines to Law</h4>
+                    <p>The Sexual Harassment of Women at Workplace Act transforms the Vishaka Guidelines into enforceable law, showing how sustained activism converts judicial principles into institutional frameworks.</p>
+                    <img src="law2013.png" alt="Workplace Harassment Act 2013" class="cinematic-img">
+                </div>
+            </div>
+            <div class="timeline-item right reveal">
+                <div class="time-content">
+                    <span>Present</span>
+                    <h4>The Unfinished Reality</h4>
+                    <p>Despite legal progress, gender- and caste-based inequalities persist. The gap between constitutional ideals and lived experience raises an ongoing question about who truly benefits from equality.</p>
+                    <img src="present.png" alt="Modern India inequality" class="cinematic-img">
                 </div>
             </div>
         </div>
