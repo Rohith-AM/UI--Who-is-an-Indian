@@ -42,9 +42,7 @@
             margin-bottom: 50px;
         }
 
-        /* =========================================================
-           SECTION 1: 1-PAGE NOTE (GEMINI CODE-BLOCK STYLE)
-           ========================================================= */
+        /* SECTION 1: 1-PAGE NOTE */
         .note-container {
             max-width: 800px;
             margin: 0 auto;
@@ -96,9 +94,7 @@
         .note-body h2 { font-family: 'Playfair Display', serif; color: #b388ff; font-size: 1.1rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 8px; margin-top: 25px; margin-bottom: 15px; }
         .note-body p, .note-body li { line-height: 1.6; color: #cccccc; font-size: 0.9rem; margin-bottom: 12px; }
 
-        /* =========================================================
-           SECTION 2: THE INCIDENT (STORYBOARD)
-           ========================================================= */
+        /* SECTION 2: THE INCIDENT */
         .section-title {
             text-align: center;
             font-family: 'Playfair Display', serif;
@@ -135,9 +131,24 @@
         .story-card.intersection .story-concept { color: #2962ff; }
         .story-card h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 0 0 15px 0; color: #fff; }
 
-        /* =========================================================
-           SECTION 3: TIMELINE (GENDER IN INDIA)
-           ========================================================= */
+        /* Cinematic Images inside Story & Timeline */
+        .cinematic-img {
+            width: 100%;
+            max-height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-top: 20px;
+            opacity: 0.6;
+            filter: grayscale(80%) sepia(30%) hue-rotate(220deg); /* Gives a dark blue/purple historic tint */
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+        }
+        .cinematic-img:hover {
+            opacity: 1;
+            filter: grayscale(0%);
+        }
+
+        /* SECTION 3: TIMELINE */
         .timeline {
             position: relative;
             max-width: 800px;
@@ -187,9 +198,7 @@
         .time-content h4 { margin: 0 0 10px 0; color: #fff; font-size: 1.2rem; }
         .time-content span { color: #888; font-size: 0.85rem; font-weight: bold; }
 
-        /* =========================================================
-           SECTION 4: SOURCES (GLASS DISCS)
-           ========================================================= */
+        /* SECTION 4: SOURCES (GLASS DISCS - NOW AS LINKS) */
         .sources-grid {
             display: flex;
             flex-wrap: wrap;
@@ -198,7 +207,11 @@
             max-width: 1000px;
             margin: 0 auto 100px auto;
         }
-        .glass-disc {
+        
+        /* Changed from div to a tag styles */
+        a.glass-disc {
+            text-decoration: none; /* Removes underline */
+            color: inherit;
             width: 280px;
             height: 280px;
             border-radius: 50%;
@@ -214,42 +227,30 @@
             box-sizing: border-box;
             box-shadow: inset 0 0 30px rgba(138, 43, 226, 0.1), 0 10px 30px rgba(0,0,0,0.5);
             transition: transform 0.4s ease, box-shadow 0.4s ease;
+            cursor: pointer;
         }
-        .glass-disc:hover {
+        a.glass-disc:hover {
             transform: translateY(-10px);
             box-shadow: inset 0 0 40px rgba(41, 98, 255, 0.2), 0 15px 40px rgba(0,0,0,0.6);
             border-color: rgba(138, 43, 226, 0.4);
         }
-        .glass-disc h4 { font-family: 'Playfair Display', serif; color: #fff; margin: 0 0 10px 0; font-size: 1.3rem; }
-        .glass-disc p { font-size: 0.8rem; color: #aaa; margin: 0; line-height: 1.5; }
+        a.glass-disc h4 { font-family: 'Playfair Display', serif; color: #fff; margin: 0 0 10px 0; font-size: 1.3rem; }
+        a.glass-disc p { font-size: 0.8rem; color: #aaa; margin: 0; line-height: 1.5; }
 
-        /* =========================================================
-           SCROLL ANIMATIONS (JS Triggered)
-           ========================================================= */
+        /* SCROLL ANIMATIONS */
         .reveal {
             opacity: 0;
             transform: translateY(40px);
             transition: all 0.8s ease-out;
         }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .reveal.active { opacity: 1; transform: translateY(0); }
 
-        /* =========================================================
-           THE MAGIC PRINT HACK 🖨️
-           ========================================================= */
+        /* THE MAGIC PRINT HACK 🖨️ */
         @media print {
             body { background: white; padding: 0; color: black; }
-            /* Hide EVERYTHING except the note container */
             .hero-section > *:not(.note-container),
-            .section-wrapper, .timeline, .sources-grid, .section-title {
-                display: none !important;
-            }
-            .note-container { 
-                border: none; box-shadow: none; max-width: 100%; margin: 0; 
-                background: transparent; backdrop-filter: none; -webkit-backdrop-filter: none;
-            }
+            .section-wrapper, .timeline, .sources-grid, .section-title { display: none !important; }
+            .note-container { border: none; box-shadow: none; max-width: 100%; margin: 0; background: transparent; backdrop-filter: none; -webkit-backdrop-filter: none; }
             .note-header { display: none !important; }
             .note-body { max-height: none; overflow: visible; padding: 0; }
             h1 { color: black; font-size: 20pt; margin-bottom: 20px; text-align: center; }
@@ -296,6 +297,7 @@
             <span class="story-concept">The Catalyst</span>
             <h3>Rajasthan, 1992</h3>
             <p>Bhanwari Devi, a grassroots social worker (Sathin) employed by the state government, campaigns against the prevalent practice of child marriage in her village of Bhateri. She successfully prevents the marriage of a one-year-old girl.</p>
+            <img src="https://images.unsplash.com/photo-1541887019672-019e04bcdd01?q=80&w=800&auto=format&fit=crop" alt="Rural Rajasthan" class="cinematic-img">
         </div>
 
         <div class="story-card reveal">
@@ -334,6 +336,7 @@
                     <span>1992</span>
                     <h4>73rd Amendment & Bhanwari Devi</h4>
                     <p>While grassroots democracy reserved seats for women in local panchayats, the Bhanwari Devi case exposed the brutal ground-level resistance to women's empowerment.</p>
+                    <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=800&auto=format&fit=crop" alt="Scales of Justice" class="cinematic-img">
                 </div>
             </div>
             <div class="timeline-item right reveal">
@@ -350,18 +353,18 @@
         <h2 class="section-title reveal">Academic Anchors</h2>
         
         <div class="sources-grid">
-            <div class="glass-disc reveal">
+            <a href="https://chicagounbound.uchicago.edu/uclf/vol1989/iss1/8/" target="_blank" class="glass-disc reveal">
                 <h4>Kimberlé Crenshaw</h4>
                 <p>Coined the term <i>Intersectionality</i> (1989), providing the framework to understand how caste, class, and gender overlap in cases like Bhanwari Devi's.</p>
-            </div>
-            <div class="glass-disc reveal">
+            </a>
+            <a href="https://www.jstor.org/stable/4398608" target="_blank" class="glass-disc reveal">
                 <h4>Uma Chakravarti</h4>
                 <p>Authored <i>Conceptualising Brahmanical Patriarchy</i> (1993), essential for understanding how caste purity dictates the control of women in India.</p>
-            </div>
-            <div class="glass-disc reveal">
+            </a>
+            <a href="https://www.jstor.org/stable/4414544" target="_blank" class="glass-disc reveal">
                 <h4>Anupama Rao</h4>
                 <p>Explores the violent intersections of caste, gender, and the state, contextualizing the vulnerability of Dalit and marginalized women.</p>
-            </div>
+            </a>
         </div>
     </div>
 
@@ -377,7 +380,6 @@
                 }
             }
         }
-        // Trigger once on load, then listen to scroll
         window.addEventListener('load', revealOnScroll);
         window.addEventListener('scroll', revealOnScroll);
     </script>
