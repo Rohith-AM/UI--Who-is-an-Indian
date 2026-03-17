@@ -9,7 +9,7 @@
     <style>
         /* Base Theme (Dark & Cinematic + Parchment Glow) */
 /* Base Theme (Dark Cinematic + Scroll Paper Background) */
-        body {
+       body {
             background-color: #050505;
             color: #e0e0e0;
             font-family: 'Inter', sans-serif;
@@ -18,16 +18,16 @@
             
             /* The Magic Scroll Background with Dark Overlay */
             background-image: 
-                linear-gradient(rgba(5, 5, 5, 0.85), rgba(8, 5, 15, 0.95)), /* Dark overlay */
-                url('scroll-pen.jpg'); /* Your Scroll & Pen Image */
+                linear-gradient(rgba(5, 5, 5, 0.85), rgba(8, 5, 15, 0.95)), 
+                url('./scroll-pen.jpg'); /* Added ./ to ensure GitHub finds it instantly */
             
             background-size: cover;
             background-position: center;
-            background-attachment: fixed; /* Makes the background stay still while scrolling */
-            background-blend-mode: multiply; /* Blends the paper texture with the dark theme */
+            background-attachment: fixed; 
+            /* background-blend-mode Removed! */
             
             overflow-x: hidden;
-        }}
+        }
 
        /* Hero Section Container */
         .hero-section {
