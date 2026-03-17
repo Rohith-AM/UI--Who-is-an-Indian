@@ -134,18 +134,20 @@
         /* Cinematic Images inside Story & Timeline */
         .cinematic-img {
             width: 100%;
-            max-height: 250px;
+            max-height: 250px; /* Adjust height as needed */
             object-fit: cover;
+            object-position: top; /* Keeps the important part of the poster visible */
             border-radius: 8px;
             margin-top: 20px;
-            opacity: 0.6;
-            filter: grayscale(80%) sepia(30%) hue-rotate(220deg); /* Gives a dark blue/purple historic tint */
+            opacity: 0.7;
+            filter: grayscale(60%) sepia(20%) hue-rotate(220deg); /* Dark purple historic tint */
             transition: all 0.4s ease;
             box-shadow: 0 4px 15px rgba(0,0,0,0.6);
         }
         .cinematic-img:hover {
             opacity: 1;
             filter: grayscale(0%);
+            transform: scale(1.02);
         }
 
         /* SECTION 3: TIMELINE */
@@ -198,7 +200,7 @@
         .time-content h4 { margin: 0 0 10px 0; color: #fff; font-size: 1.2rem; }
         .time-content span { color: #888; font-size: 0.85rem; font-weight: bold; }
 
-        /* SECTION 4: SOURCES (GLASS DISCS - NOW AS LINKS) */
+        /* SECTION 4: SOURCES (LINKS) */
         .sources-grid {
             display: flex;
             flex-wrap: wrap;
@@ -208,9 +210,8 @@
             margin: 0 auto 100px auto;
         }
         
-        /* Changed from div to a tag styles */
         a.glass-disc {
-            text-decoration: none; /* Removes underline */
+            text-decoration: none;
             color: inherit;
             width: 280px;
             height: 280px;
@@ -297,7 +298,7 @@
             <span class="story-concept">The Catalyst</span>
             <h3>Rajasthan, 1992</h3>
             <p>Bhanwari Devi, a grassroots social worker (Sathin) employed by the state government, campaigns against the prevalent practice of child marriage in her village of Bhateri. She successfully prevents the marriage of a one-year-old girl.</p>
-            <img src="https://images.unsplash.com/photo-1541887019672-019e04bcdd01?q=80&w=800&auto=format&fit=crop" alt="Rural Rajasthan" class="cinematic-img">
+            <img src="rajasthan.jpg" alt="Rural Rajasthan 1992" class="cinematic-img">
         </div>
 
         <div class="story-card reveal">
@@ -322,6 +323,7 @@
                     <span>1829</span>
                     <h4>Abolition of Sati</h4>
                     <p>An early legislative milestone against violent patriarchal practices, though initiated under colonial rule.</p>
+                    <img src="sati.png" alt="Sati Abolition" class="cinematic-img">
                 </div>
             </div>
             <div class="timeline-item right reveal">
@@ -329,6 +331,7 @@
                     <span>1950</span>
                     <h4>The Constitution</h4>
                     <p>Adoption of the Indian Constitution, guaranteeing equality before the law and prohibiting discrimination on grounds of religion, race, caste, sex, or place of birth.</p>
+                    <img src="constitution.png" alt="Article 15 of Indian Constitution" class="cinematic-img">
                 </div>
             </div>
             <div class="timeline-item left reveal">
@@ -336,7 +339,6 @@
                     <span>1992</span>
                     <h4>73rd Amendment & Bhanwari Devi</h4>
                     <p>While grassroots democracy reserved seats for women in local panchayats, the Bhanwari Devi case exposed the brutal ground-level resistance to women's empowerment.</p>
-                    <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=800&auto=format&fit=crop" alt="Scales of Justice" class="cinematic-img">
                 </div>
             </div>
             <div class="timeline-item right reveal">
@@ -344,6 +346,7 @@
                     <span>1997</span>
                     <h4>Vishaka Guidelines</h4>
                     <p>Sparked directly by Bhanwari Devi's fight, the Supreme Court lays down historic guidelines to prevent sexual harassment at the workplace.</p>
+                    <img src="vishaka.png" alt="Vishakha Guidelines" class="cinematic-img">
                 </div>
             </div>
         </div>
@@ -374,7 +377,7 @@
             for (var i = 0; i < reveals.length; i++) {
                 var windowHeight = window.innerHeight;
                 var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 100; // Trigger point
+                var elementVisible = 100;
                 if (elementTop < windowHeight - elementVisible) {
                     reveals[i].classList.add('active');
                 }
